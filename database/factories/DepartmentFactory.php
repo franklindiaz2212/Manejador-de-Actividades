@@ -17,7 +17,11 @@ class DepartmentFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->jobTitle
+            'name' => $this->faker->jobTitle,
+            'tarea' => $this->faker->text,
+             'asignacion' => $this->faker->date,
+             'entrega' => $this->faker->date,
+             
         ];
     }
 }

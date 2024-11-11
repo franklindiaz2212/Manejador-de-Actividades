@@ -11,10 +11,12 @@ class DepartmentController extends Controller
 {
     public function index()
     {
-        $departments = Department::all();
-        return Inertia::render('Departments/Index', [
-            'departments' => $departments
-        ]); 
+        $departments = Department::paginate(10);
+
+        $department = Department::all();
+        return Inertia::render('Departments/Index',['departments' => $departments,
+         'departments' => $departments]);
+        
     }
 
     /**
@@ -30,7 +32,7 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['name' => 'required|max:100']);
+        $request->validate([ 'name' => 'required|max:100','tarea' => 'required|max:300', 'asignacion' => 'required|max:12', 'entrega' => 'required|max:12']);
         $department = new Department($request->input());
         $department->save();
         return redirect('departments');
@@ -59,7 +61,7 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, Department $department)
     {
-        $request->validate(['name' => 'required|max:100']);
+        $request->validate(['name' => 'required|max:100','tarea' => 'required|max:300', 'asignacion' => 'required|max:12', 'entrega' => 'required|max:12']);
         $department->update($request->all());
         return redirect('departments');
      

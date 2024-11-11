@@ -13,7 +13,7 @@ const showingNavigationDropdown = ref(false);
 <template>
     <div>
         <div class="min-h-screen bg-gray-100">
-            <nav class="bg-white border-b border-gray-100">
+            <nav  class="bg-gray-800 text-white">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -23,10 +23,9 @@ const showingNavigationDropdown = ref(false);
 
                                 
                                 <Link :href="route('dashboard')">
-                                    <ApplicationLogo
-                                        class="block h-9 w-auto fill-current text-gray-600"
-                                        
-                                    />
+                                 <ApplicationLogo >
+                                    
+                                 </ApplicationLogo>
                                 </Link>
                             </div>
 
@@ -60,7 +59,7 @@ const showingNavigationDropdown = ref(false);
                                         <span class="inline-flex rounded-md">
                                             <button
                                                 type="button"
-                                                class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                                class=" inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
                                                 {{ $page.props.auth.user.name }}
 
@@ -80,8 +79,8 @@ const showingNavigationDropdown = ref(false);
                                         </span>
                                     </template>
 
-                                    <template #content>
-                                        <DropdownLink :href="route('profile.edit')"> Profile </DropdownLink>
+                                    <template #content >
+                                        <DropdownLink  :href="route('profile.edit')"> Profile </DropdownLink>
                                         <DropdownLink :href="route('logout')" method="post" as="button">
                                             Log Out
                                         </DropdownLink>
@@ -134,7 +133,7 @@ const showingNavigationDropdown = ref(false);
                         </ResponsiveNavLink>
 
                     </div>
-                    <div class="pt-2 pb-3 space-y-1">
+                    <div >
                         <ResponsiveNavLink :href="route('departments.index')" :active="route().current('departments.index')">
                             Actividades
                         </ResponsiveNavLink>
@@ -143,7 +142,7 @@ const showingNavigationDropdown = ref(false);
 
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('employees.index')" :active="route().current('employees.index')">
-                            Employees
+                       
                         </ResponsiveNavLink>
                         
                     </div>

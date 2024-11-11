@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
-            $table->string('name',300);
+            $table->string('name', 300);
+            $table->string('tarea', 300);
+            $table->date('asignacion', 300);
+            $table->date('entrega', 300);    
             $table->timestamps();
         });
     }
