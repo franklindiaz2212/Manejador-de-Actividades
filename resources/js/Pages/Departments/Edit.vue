@@ -17,6 +17,7 @@ const form = useForm({
     entrega:props.department.entrega,
 
 });
+console.log(form)
 </script>
 
 <template>
@@ -32,16 +33,16 @@ const form = useForm({
                 <div class="p-4 bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                    <form @submit.prevent="$event => form.patch(route('departments.update',department))"
                     class=" mt-6 space-y-6 max-w-xl">
-                    <InputLabel for="name" value="name"></InputLabel>
-                    <TextInput id="name" v-model="form.name" autofocus required 
+                    <InputLabel for="name" value=""><h1 class="text-gray-200">Nombre</h1></InputLabel>
+                    <TextInput id="name" v-model="form.name" 
                     type="text"    
                     class="mt-1 block w-full"></TextInput>
-                    <InputLabel for="asignacion" value="Asignacion"></InputLabel>
-                    <TextInput id="asignacion" v-model="form.tarea" autofocus required 
+                    <InputLabel for="asignacion" value=""><h1 class="text-gray-200">Tarea</h1></InputLabel>
+                    <TextInput id="asignacion" v-model="form.tarea"
                     type="text"    
                     class="mt-1 block w-full"></TextInput> 
                     
-                    <InputLabel for="name" value="Fecha de asignacio"></InputLabel>
+                    <InputLabel for="name" value=""><h1 class="text-gray-200">Fecha de asignacion</h1></InputLabel>
                     <div class="relative max-w-sm col-span-2">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                           <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -53,7 +54,7 @@ const form = useForm({
                       </div>
    
                    
-                    <InputLabel for="name" value="Fecha de entrega"></InputLabel>
+                    <InputLabel for="name" value=""><h1 class="text-gray-200">Fecha de entrega</h1></InputLabel>
                     
                     <div class="relative max-w-sm col-span-2">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">

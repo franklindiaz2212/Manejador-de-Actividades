@@ -12,7 +12,7 @@ const showingNavigationDropdown = ref(false);
 
 <template>
     <div>
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-gray-700">
             <nav  class="bg-gray-800 text-white">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,15 +30,15 @@ const showingNavigationDropdown = ref(false);
                             </div>
 
                             <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
+                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex text-gray-200">
+                                <NavLink  :href="route('dashboard')" :active="route().current('dashboard') " >
+                                     <h1 class="text-gray-200">Dashboard</h1>
                                 </NavLink>
                             </div>
                                
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink :href="route('departments.index')" :active="route().current('departments.index')">
-                                    Actividades
+                                   <h1 class="text-gray-200"> Actividades </h1>
                                 </NavLink>
                             </div>
                               
@@ -53,13 +53,13 @@ const showingNavigationDropdown = ref(false);
 
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
                             <!-- Settings Dropdown -->
-                            <div class="ms-3 relative">
-                                <Dropdown align="right" width="48">
+                            <div class="bg-gray-700 ms-3 relative">
+                                <Dropdown class="bg-gray-700" align="right" width="48">
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
                                             <button
                                                 type="button"
-                                                class=" inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                                class="' bg-gray-800 inline-flex items-center px-3 py-2  text-gray-200  hover:text-gray-800 focus:outline-none transition ease-in-out duration-150'"
                                             >
                                                 {{ $page.props.auth.user.name }}
 
@@ -79,9 +79,9 @@ const showingNavigationDropdown = ref(false);
                                         </span>
                                     </template>
 
-                                    <template #content >
-                                        <DropdownLink  :href="route('profile.edit')"> Profile </DropdownLink>
-                                        <DropdownLink :href="route('logout')" method="post" as="button">
+                                    <template  #content >
+                                        <DropdownLink  :href="route('profile.edit')" > Profile </DropdownLink>
+                                        <DropdownLink  :href="route('logout')" method="post" as="button">
                                             Log Out
                                         </DropdownLink>
                                     </template>
@@ -157,21 +157,21 @@ const showingNavigationDropdown = ref(false);
                         </div>
 
                         <div class="mt-3 space-y-1">
-                            <ResponsiveNavLink :href="route('profile.edit')"> Profile </ResponsiveNavLink>
+                            <ResponsiveNavLink  :href="route('profile.edit')" > Profile </ResponsiveNavLink>
                             <ResponsiveNavLink :href="route('logout')" method="post" as="button">
-                                Log Out
+                                Log 
                             </ResponsiveNavLink>
                         </div>
                     </div>
                 </div>
             </nav>
 
-            <!-- Page Heading -->
-            <header class="bg-white shadow" v-if="$slots.header">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+      
+             <header class="shadow" v-if="$slots.header">
+                <div class=" bg-gray-700 max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     <slot name="header" />
                 </div>
-            </header>
+            </header> 
 
             <!-- Page Content -->
             <main>

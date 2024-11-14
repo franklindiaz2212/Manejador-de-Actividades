@@ -29,16 +29,16 @@ const form = useForm({
 
                       <form @submit.prevent="$event => form.post(route('departments.store'))"
                         class=" mt-6 space-y-6 max-w-xl">
-                        <InputLabel for="name" value="Nombre" ></InputLabel>
+                        <InputLabel for="name" value="" ><h1 class="text-gray-200">Nombre</h1></InputLabel>
                         <TextInput id="entrega" v-model="form.name" autofocus required 
                         type="text"
                         class="mt-1 block w-full"></TextInput>
-                        <InputLabel for="name" value="Tarea" ></InputLabel>
+                        <InputLabel for="name" value="" ><h1 class="text-gray-200">Tarea</h1></InputLabel>
                         <TextInput id="entrega" v-model="form.tarea" autofocus required 
                         type="text"
                         class="mt-1 block w-full"></TextInput> 
                         
-                        <InputLabel for="name" value="Fecha de asignacion" ></InputLabel>
+                        <InputLabel for="name" value="" ></InputLabel>
 
 
                       

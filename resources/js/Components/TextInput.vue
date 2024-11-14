@@ -36,7 +36,10 @@ defineExpose({ focus: () => input.value.focus() });
   <script setup>
   import { ref, onMounted } from 'vue';
 
-  const model = ref();
+  const model = defineModel({
+    type: String,
+    required: true,
+});
   const input = ref(null);
 
   onMounted(() => {
