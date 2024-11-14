@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name', 300);
             $table->string('tarea', 300);
             $table->date('asignacion', 300);
-            $table->date('entrega', 300);    
+            $table->date('entrega', 300);
             $table->timestamps();
         });
     }
